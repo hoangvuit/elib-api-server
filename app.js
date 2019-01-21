@@ -5,7 +5,7 @@ const api = require("./api");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const multer = require("multer");
-const uploadPath = "./public/uploads";
+const uploadPath = "/public/uploads";
 
 app.set("port", process.env.PORT || 8081);
 
