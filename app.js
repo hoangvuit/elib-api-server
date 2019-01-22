@@ -55,13 +55,12 @@ app.post("/api/upload", multer(multerConfig).single("cover"), function(
   res.send("/uploads/" + filename);
 });
 
+app.use("/", express.static(__dirname + "/public"));
 app.use(function(req, res) {
   const err = new Error("Not found");
   err.status = 404;
   res.json(err);
 });
-
-app.use("/", express.static(__dirname + "/public"));
 
 const mongoose = require("mongoose");
 mongoose.connect(
